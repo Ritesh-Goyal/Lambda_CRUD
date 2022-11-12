@@ -13,7 +13,7 @@ exports.handler = async function(event) {
   let response;
   switch(true) {
     case event.httpMethod === 'GET' && event.path === statusCheck:
-      response = buildResponse(200);
+      response = buildResponse(200, 'The Lambda Function is working');
       break;
     case event.httpMethod === 'GET' && event.path === employeeRecord:
       response = await getRecord(event.queryStringParameters.employeeId);
